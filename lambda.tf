@@ -44,4 +44,10 @@ resource "aws_lambda_function" "node-js-lambda" {
     security_group_ids = [aws_security_group.allow_outgoing.id]
   }
 
+  environment {
+    variables = {
+      DB_PASS = "password123"
+    }
+  }
+
 }
