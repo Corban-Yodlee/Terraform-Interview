@@ -4,7 +4,7 @@ resource "aws_vpc" "interview" {
 
 resource "aws_security_group" "allow_outgoing" {
   name        = "allow_egress_only"
-  description = "Allows out non-existant lambda to make calls out but not recieve any incoming connections"
+  description = "Allows out non-existent lambda to make calls out but not recieve any incoming connections"
   vpc_id      = aws_vpc.interview.id
 
   ingress {
