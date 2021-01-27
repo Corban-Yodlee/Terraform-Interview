@@ -18,6 +18,27 @@ resource "aws_iam_role" "iam_for_lambda" {
 EOF
 }
 
+resource "aws_iam_policy" "policy_for_lambda" {
+  name        = "important_lambda_policy"
+  path        = "/"
+  description = "The main policy for our lambda role"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "ec2:Describe*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
+
 
 resource "aws_lambda_function" "node-js-lambda" {
 
