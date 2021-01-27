@@ -18,3 +18,18 @@ resource "aws_security_group" "allow_outgoing" {
     Name = "allow_outgoing"
   }
 }
+
+resource "aws_subnet" "a" {
+  vpc_id     = "vpc-0a2aa6d7a68dce461"
+  cidr_block = "10.0.0.0/24"
+}
+
+resource "aws_subnet" "b" {
+  vpc_id     = "vpc-0a2aa6d7a68dce461"
+  cidr_block = "10.1.0.0/24"
+}
+
+resource "aws_subnet" "c" {
+  vpc_id     = "vpc-0a2aa6d7a68dce461"
+  cidr_block = "10.0.2.0/24"
+}
