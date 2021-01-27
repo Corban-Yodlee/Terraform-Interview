@@ -35,7 +35,6 @@ resource "aws_lambda_function" "node-js-lambda" {
   runtime = "go1.x"
 
    vpc_config {
-    # Every subnet should be able to reach an EFS mount target in the same Availability Zone. Cross-AZ mounts are not permitted.
     subnet_ids = [
       aws_subnet.a.id,
       aws_subnet.b.id,
